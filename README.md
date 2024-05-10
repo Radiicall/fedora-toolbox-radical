@@ -13,4 +13,4 @@ $ distrobox enter fedora
 $ distrobox-export --app visual-studio-code
 $ distrobox-export --app alacritty
 $ distrobox-export --app nextcloud-client
-$ sed -i 's|/usr/bin/distrobox-enter  -n fedora  --   alacritty|/usr/bin/distrobox-enter  -n fedora  --   alacritty --command tmux|g' ~/.bashrc
+$ sed -i 's|/usr/bin/distrobox-enter  -n fedora  --   alacritty|/usr/bin/distrobox-enter  -n fedora  --   alacritty --command tmux|g' ~/.local/share/applications/fedora-Alacritty.desktop
