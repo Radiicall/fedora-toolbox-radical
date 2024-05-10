@@ -1,5 +1,6 @@
 # fedora-toolbox-radical
-My general purpose fedora-toolbox for use in Fedora Atomic Workstation editions
+My general purpose fedora-toolbox for use in Fedora Atomic Workstation editions.
+
 It's made for use in distrobox, I personally didnt like how toolbx worked.
 
 ## Setup
