@@ -11,6 +11,5 @@ podman build --tag fedora-toolbox-radical --file https://raw.githubusercontent.c
 rmdir /tmp/fedora-toolbox-radical
 distrobox create --image fedora-toolbox-radical:latest --name ${CONTAINER_NAME}
 distrobox-enter -n ${CONTAINER_NAME} -- distrobox-export --app "Visual Studio Code"
-distrobox-enter -n ${CONTAINER_NAME} -- distrobox-export --app alacritty
 distrobox-enter -n ${CONTAINER_NAME} -- distrobox-export --app nextcloud
-sed --in-place "s|/usr/bin/distrobox-enter  -n ${CONTAINER_NAME}  --   alacritty|/usr/bin/distrobox-enter  -n ${CONTAINER_NAME}  --   alacritty --command tmux|g" ~/.local/share/applications/fedora-Alacritty.desktop
+echo -e "[Desktop Entry]\nType=Application\nExec=/usr/bin/distrobox-enter  -n $CONTAINER_NAME  --   alacritty --command tmux \nIcon=Alacritty\nTerminal=false\nCategories=System;TerminalEmulator;\n\nName=Alacritty\nGenericName=Terminal\nComment=A fast, cross-platform, OpenGL terminal emulator\nStartupNotify=true\nStartupWMClass=Alacritty\nActions=New;\nX-Desktop-File-Install-Version=0.26\n\n[Desktop Action New]\nName=New Terminal\nExec=/usr/bin/distrobox-enter  -n $CONTAINER_NAME  --   alacritty --command tmux " | tee ~/.local/share/applications/$CONTAINER_NAME-Alacritty.desktop
